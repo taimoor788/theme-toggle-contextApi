@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { ThemeProvider } from "./ThemeContext";
+import Header from "./Header";
+import Main from "./Main";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <h2 style={{textAlign:'center', padding: "10px", fontSize:'48px' }}>Context Api</h2>
+      <Header /> {/* Header contains the theme toggle */}
+      <Main />   {/* Main content displays based on the current theme */}
+    </ThemeProvider>
   );
 }
 
